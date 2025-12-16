@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Menú Galaxy Night Club</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at top, #3b1c6b, #0b0218);
+  color:#fff;
+}
+.container{
+  max-width:900px;
+  margin:40px auto;
+  background:rgba(15,8,40,0.85);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 0 40px #b14cff;
+}
+h1{
+  text-align:center;
+  font-size:42px;
+  margin-bottom:5px;
+  color:#ffb3ff;
+}
+h2{
+  margin-top:40px;
+  color:#a875ff;
+  border-bottom:2px solid #7c3aed;
+  padding-bottom:8px;
+}
+.item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:12px 0;
+}
+.controls{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.controls button{
+  background:#7c3aed;
+  border:none;
+  color:white;
+  width:32px;
+  height:32px;
+  font-size:20px;
+  border-radius:8px;
+  cursor:pointer;
+}
+.controls button:hover{ background:#a875ff; }
+.qty{
+  width:24px;
+  text-align:center;
+}
+.price{
+  min-width:80px;
+  text-align:right;
+  color:#7cffea;
+}
+.total{
+  margin-top:40px;
+  font-size:28px;
+  text-align:right;
+  color:#7cffea;
+}
+.combo{
+  border:2px solid #b14cff;
+  border-radius:15px;
+  padding:15px;
+  margin:15px 0;
+  background:rgba(80,20,120,0.4);
+}
+.reset{
+  margin-top:20px;
+  width:100%;
+  padding:12px;
+  background:#ff4d6d;
+  border:none;
+  color:white;
+  font-size:18px;
+  border-radius:12px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1>MENÚ GALAXY<br>NIGHT CLUB</h1>
+
+<h2>🚀 Fases Lunares (Alcohol)</h2>
+
+<div class="item"><span>Piscola</span><div class="controls"><button onclick="removeItem('piscola',2000)">−</button><span class="qty" id="piscola">0</span><button onclick="addItem('piscola',2000)">+</button><span class="price">$2.000</span></div></div>
+<div class="item"><span>Ruso Blanco</span><div class="controls"><button onclick="removeItem('ruso',2000)">−</button><span class="qty" id="ruso">0</span><button onclick="addItem('ruso',2000)">+</button><span class="price">$2.000</span></div></div>
+<div class="item"><span>Sexo en la Playa</span><div class="controls"><button onclick="removeItem('sexo',2000)">−</button><span class="qty" id="sexo">0</span><button onclick="addItem('sexo',2000)">+</button><span class="price">$2.000</span></div></div>
+<div class="item"><span>Agua Ardiente</span><div class="controls"><button onclick="removeItem('ardiente',2000)">−</button><span class="qty" id="ardiente">0</span><button onclick="addItem('ardiente',2000)">+</button><span class="price">$2.000</span></div></div>
+<div class="item"><span>Blue Label</span><div class="controls"><button onclick="removeItem('blue',2000)">−</button><span class="qty" id="blue">0</span><button onclick="addItem('blue',2000)">+</button><span class="price">$2.000</span></div></div>
+<div class="item"><span>Espumante</span><div class="controls"><button onclick="removeItem('espumante',2000)">−</button><span class="qty" id="espumante">0</span><button onclick="addItem('espumante',2000)">+</button><span class="price">$2.000</span></div></div>
+
+<h2>🛸 Viaje Nebular (Sin alcohol)</h2>
+
+<div class="item"><span>Agua Mineral</span><div class="controls"><button onclick="removeItem('agua',800)">−</button><span class="qty" id="agua">0</span><button onclick="addItem('agua',800)">+</button><span class="price">$800</span></div></div>
+<div class="item"><span>Energética</span><div class="controls"><button onclick="removeItem('energetica',1000)">−</button><span class="qty" id="energetica">0</span><button onclick="addItem('energetica',1000)">+</button><span class="price">$1.000</span></div></div>
+<div class="item"><span>Mojito sin Alcohol</span><div class="controls"><button onclick="removeItem('mojito',1000)">−</button><span class="qty" id="mojito">0</span><button onclick="addItem('mojito',1000)">+</button><span class="price">$1.000</span></div></div>
+
+<h2>🔥 Máximo Impulso</h2>
+
+<div class="item"><span>Chorrillana</span><div class="controls"><button onclick="removeItem('chorri',800)">−</button><span class="qty" id="chorri">0</span><button onclick="addItem('chorri',800)">+</button><span class="price">$800</span></div></div>
+<div class="item"><span>Tabla de Queso</span><div class="controls"><button onclick="removeItem('queso',800)">−</button><span class="qty" id="queso">0</span><button onclick="addItem('queso',800)">+</button><span class="price">$800</span></div></div>
+<div class="item"><span>Papas Cheese</span><div class="controls"><button onclick="removeItem('papas',800)">−</button><span class="qty" id="papas">0</span><button onclick="addItem('papas',800)">+</button><span class="price">$800</span></div></div>
+
+<h2>☕ Post-Viaje Coffee Noir</h2>
+
+<div class="item"><span>Sándwich Parisén</span><div class="controls"><button onclick="removeItem('sandwich',800)">−</button><span class="qty" id="sandwich">0</span><button onclick="addItem('sandwich',800)">+</button><span class="price">$800</span></div></div>
+<div class="item"><span>Té Helado</span><div class="controls"><button onclick="removeItem('te',800)">−</button><span class="qty" id="te">0</span><button onclick="addItem('te',800)">+</button><span class="price">$800</span></div></div>
+
+<h2>🍬 Dulce Driveline</h2>
+
+<div class="item"><span>Gansito</span><div class="controls"><button onclick="removeItem('gansito',700)">−</button><span class="qty" id="gansito">0</span><button onclick="addItem('gansito',700)">+</button><span class="price">$700</span></div></div>
+
+<h2>🌟 Zona de Ofertas: Combos</h2>
+
+<div class="combo item"><span>⭐ Oferta Estelar</span><div class="controls"><button onclick="removeItem('combo1',10900)">−</button><span class="qty" id="combo1">0</span><button onclick="addItem('combo1',10900)">+</button><span class="price">$10.900</span></div></div>
+<div class="combo item"><span>🪐 Oferta El Planeta</span><div class="controls"><button onclick="removeItem('combo2',5500)">−</button><span class="qty" id="combo2">0</span><button onclick="addItem('combo2',5500)">+</button><span class="price">$5.500</span></div></div>
+<div class="combo item"><span>🚀 Fuga Espacial</span><div class="controls"><button onclick="removeItem('combo3',3000)">−</button><span class="qty" id="combo3">0</span><button onclick="addItem('combo3',3000)">+</button><span class="price">$3.000</span></div></div>
+<div class="combo item"><span>💥 Supernova</span><div class="controls"><button onclick="removeItem('combo4',5450)">−</button><span class="qty" id="combo4">0</span><button onclick="addItem('combo4',5450)">+</button><span class="price">$5.450</span></div></div>
+
+<div style="margin-top:30px; display:flex; gap:10px;">
+<button class="reset" style="background:#3aed7c;" onclick="discount(20)">Descuento Facción 20%</button>
+<button class="reset" style="background:#3a7ced;" onclick="discount(25)">Descuento Facción 25%</button>
+</div>
+
+<div class="total" id="total">Total: $0</div>
+<button class="reset" onclick="resetTotal()">Resetear venta</button>
+
+</div>
+
+<script>
+let total = 0;
+let cantidades = {};
+
+function addItem(id, precio){
+  cantidades[id] = (cantidades[id] || 0) + 1;
+  total += precio;
+  actualizar(id);
+}
+function removeItem(id, precio){
+  if(cantidades[id] > 0){
+    cantidades[id]--;
+    total -= precio;
+    actualizar(id);
+  }
+}
+function actualizar(id){
+  document.getElementById(id).innerText = cantidades[id];
+  document.getElementById('total').innerText =
+    'Total: $' + total.toLocaleString('es-CL');
+}
+function resetTotal(){
+  total = 0;
+  cantidades = {};
+  document.querySelectorAll('.qty').forEach(e => e.innerText = '0');
+  document.getElementById('total').innerText = 'Total: $0';
+}
+function discount(percent){
+  total = Math.round(total - (total * percent / 100));
+  document.getElementById('total').innerText =
+    'Total con descuento: $' + total.toLocaleString('es-CL');
+}
+</script>
+</body>
+</html>
